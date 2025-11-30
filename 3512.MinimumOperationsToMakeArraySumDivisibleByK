@@ -1,0 +1,13 @@
+public class 3512.MinimumOperationsToMakeArraySumDivisibleByK {
+
+    public int minOperations(int[] nums, int k) {
+        int totalSum = 0;
+        for (int num : nums) {
+            totalSum += num;
+        }
+        int remainder = totalSum % k;
+
+        return remainder;
+    }
+    
+}
