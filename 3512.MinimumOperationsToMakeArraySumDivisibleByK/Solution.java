@@ -1,4 +1,4 @@
-public class 3512.MinimumOperationsToMakeArraySumDivisibleByK {
+public class Solution {
 
     public int minOperations(int[] nums, int k) {
         int totalSum = 0;
