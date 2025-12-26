@@ -1,13 +1,43 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
 public class Solution {
 
-    // [法二]：时间戳排序，官方题解。非常妙
+    // [法一]：更优写法
     public int maxTwoEvents(int[][] events) {
+        Arrays.sort(events, Comparator.comparingInt(e -> e[1]));
+        int[] value = new int[events.length];
+        int maxValue = events[0][2];
+        value[0] = maxValue;
+        for (int i = 1; i < events.length; i++) {
+            maxValue = Math.max(maxValue, events[i][2]);
+            value[i] = maxValue;
+        }
+        int ans = events[0][2];
+        for (int i = 1; i < events.length; i++) {
+            int find = events[i][0] - 1;
+            int left = 0, right = i - 1;
+            while (left < right) {
+                int mid = left + right + 1 >> 1;
+                if (events[mid][1] <= find)
+                    left = mid;
+                else
+                    right = mid - 1;
+            }
+            if (events[left][1] <= find)
+                ans = Math.max(ans, value[left] + events[i][2]);
+            else
+                ans = Math.max(ans, events[i][2]);
+        }
+        return ans;
+    }
+
+    // [法二]：时间戳排序，官方题解。非常妙
+    public int maxTwoEvents2(int[][] events) {
         List<Event> evs = new ArrayList<>();
         for (int[] event : events) {
             evs.add(new Event(event[0], 0, event[2]));
