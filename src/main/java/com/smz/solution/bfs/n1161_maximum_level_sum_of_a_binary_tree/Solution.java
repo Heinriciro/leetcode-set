@@ -1,6 +1,7 @@
 package com.smz.solution.bfs.n1161_maximum_level_sum_of_a_binary_tree;
 
-import com.smz.utils.SimpleBinaryTree;
+import com.smz.utils.IntegerValueBinaryTree;
+import com.smz.utils.IntegerValueBinaryTree.TreeNode;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -39,9 +40,9 @@ class Solution {
 
     public static void main(String[] args)
         throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        ArrayList<Tree> testBinaryTree = new ArrayList<>();
-        testBinaryTree.add(new Tree(new Integer[]{1,7,0,7,-8,null,null}));
-        testBinaryTree.add(new Tree(new Integer[]{989,null,10250,98693,-89388,null,null,null,-32127}));
+        ArrayList<IntegerValueBinaryTree> testBinaryTree = new ArrayList<>();
+        testBinaryTree.add(new IntegerValueBinaryTree(new Integer[]{1,7,0,7,-8,null,null}));
+        testBinaryTree.add(new IntegerValueBinaryTree(new Integer[]{989,null,10250,98693,-89388,null,null,null,-32127}));
 
         Solution s = new Solution();
         for (int i =0; i < testBinaryTree.size(); i++) {
@@ -49,23 +50,5 @@ class Solution {
             System.out.println("No." + (i + 1) + " test case: " + result);
         }
         
-    }
-
-    public static class Tree extends SimpleBinaryTree<Integer> {
-        public Tree(Integer[] values)
-            throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-            super(values, TreeNode.class, Integer.class);
-        }
-    }
-
-
-    public static class TreeNode extends SimpleBinaryTree.SimpleBinaryTreeNode<Integer> {
-        public TreeNode(Integer x) {
-            super(x);
-        }
-
-        public TreeNode(Integer x, TreeNode left, TreeNode right) {
-            super(x, left, right);
-        }
     }
 }
