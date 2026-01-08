@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n1458_max_dot_product_of_two_subsequences;
 
 public class Solution {
 
