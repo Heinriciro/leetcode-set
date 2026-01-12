@@ -1,5 +1,6 @@
+package com.smz.solution.math_derivation.n1266_minimum_time_visiting_all_points;
 public class Solution {
-    // [法一]：数学/几何推导以优化路径计算方法
+    // [法一]：数学/几何推导以优化路径计算方法 (这一方法又称 切比雪夫距离)
     public int minTimeToVisitAllPoints(int[][] points) {
         int res = 0;
 
