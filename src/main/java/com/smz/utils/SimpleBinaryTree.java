@@ -2,6 +2,7 @@ package com.smz.utils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 public class SimpleBinaryTree<T1> {
     public SimpleBinaryTreeNode<T1> root;
@@ -42,6 +43,27 @@ public class SimpleBinaryTree<T1> {
             val = x;
             this.left = left;
             this.right = right;
+        }
+
+        public void print() {
+            ArrayList<SimpleBinaryTreeNode<T2>> stack = new ArrayList<>();
+            SimpleBinaryTreeNode<T2> cur = this;
+            stack.add(cur);
+
+            while(!stack.isEmpty()) {
+                for (int i = 0; i < stack.size(); i++) {
+                    cur = stack.removeFirst();
+                    if (cur != null) {
+                        System.out.print(cur.val.toString() + " ");
+                        stack.addLast(cur.left);
+                        stack.addLast(cur.right);
+
+                    } else {
+                        System.out.print("null ");
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 
