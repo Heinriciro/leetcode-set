@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n3562_maximum_profit_from_trading_stocks_with_discount;
 import java.util.ArrayList;
 import java.util.List;
 

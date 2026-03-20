@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n1411_numbers_of_ways_to_paint_nx3_grid;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

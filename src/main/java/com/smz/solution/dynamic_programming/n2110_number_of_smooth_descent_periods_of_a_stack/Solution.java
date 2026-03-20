@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n2110_number_of_smooth_descent_periods_of_a_stack;
 public class Solution {
     public long getDescentPeriods(int[] prices) {
         int n = prices.length;

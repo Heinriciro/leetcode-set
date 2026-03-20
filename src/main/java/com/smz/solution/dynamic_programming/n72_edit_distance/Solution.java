@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n72_edit_distance;
 class Solution {
     // [法一]: DP
     public int minDistance(String word1, String word2) {

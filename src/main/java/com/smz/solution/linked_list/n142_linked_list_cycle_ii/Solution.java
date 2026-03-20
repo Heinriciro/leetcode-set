@@ -1,4 +1,4 @@
-package com.smz.solution.n142_linked_list_cycle_ii;
+package com.smz.solution.linked_list.n142_linked_list_cycle_ii;
 import com.smz.utils.ListNode;
 import java.util.HashSet;
 import java.util.Set;

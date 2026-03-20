@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n3573_best_time_to_buy_and_sell_stock_v;
 public class Solution {
     // 本题不需要考虑股票在手的数量，可以任意的买进和卖出, 但是买进后必须卖出或卖出后必须买进
     // 注意：由于必须完成一笔交易再进行下一个，考虑到题目中引入天数这一时间轴，所以无法重复进行同一个交易

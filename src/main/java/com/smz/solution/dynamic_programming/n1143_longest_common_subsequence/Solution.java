@@ -1,3 +1,4 @@
+package com.smz.solution.dynamic_programming.n1143_longest_common_subsequence;
 class Solution {
     // [法一]: DP
     public int longestCommonSubsequence(String text1, String text2) {

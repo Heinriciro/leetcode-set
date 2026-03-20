@@ -1,4 +1,4 @@
-package com.smz.solution.union_find.n1970_lastdaywhereyoucanstillcross;
+package com.smz.solution.union_find.n1970_lastday_where_you_can_still_cross;
 
 import com.smz.utils.UnionFind;
 
