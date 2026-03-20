@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 class Solution {
+    // [法一]：排序
     public int[][] merge(int[][] intervals) {
         ArrayList<int[]> res = new ArrayList<>();
 

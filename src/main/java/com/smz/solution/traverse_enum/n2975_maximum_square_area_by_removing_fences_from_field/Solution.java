@@ -19,7 +19,7 @@ public class Solution {
 
     private static final int MOD = 1000000007;
     // [法二]：枚举所有可能边长，但无需二分查找，交替遍历即可
-    //         最后一个测例超时
+    //         另外也可不排序直接通过Set枚举查找即可
     public int maximizeSquareArea(int m, int n, int[] hFences, int[] vFences) {
         Set<Integer> hGaps = getGaps(n, vFences);
         Set<Integer> vGaps = getGaps(m, hFences);

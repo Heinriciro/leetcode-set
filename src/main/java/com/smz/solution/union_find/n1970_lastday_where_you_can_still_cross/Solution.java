@@ -1,3 +1,7 @@
+package com.smz.solution.union_find.n1970_lastdaywhereyoucanstillcross;
+
+import com.smz.utils.UnionFind;
+
 public class Solution {
     private static final int[][] DIRS = {{0,-1},{0,1},{-1,0},{1,0}};
 
@@ -49,33 +53,33 @@ public class Solution {
         }
     }
 
-    public class UnionFind {
-        int[] parent;
-        public UnionFind(int n) {
-            parent = new int[n];
-            for (int i = 0; i < n; i++) {
-                parent[i] = i;
-            }
-        }
+    // public class UnionFind {
+    //     int[] parent;
+    //     public UnionFind(int n) {
+    //         parent = new int[n];
+    //         for (int i = 0; i < n; i++) {
+    //             parent[i] = i;
+    //         }
+    //     }
 
-        public int find(int x) {
-            if (parent[x] != x) {
-                parent[x] = find(parent[x]);
-            }
+    //     public int find(int x) {
+    //         if (parent[x] != x) {
+    //             parent[x] = find(parent[x]);
+    //         }
 
-            return parent[x];
-        }
+    //         return parent[x];
+    //     }
 
-        public void merge(int from, int to) {
-            int x = find(from);
-            int y = find(to);
-            if (x != y) {
-                parent[x] = y;
-            }
-        }
+    //     public void merge(int from, int to) {
+    //         int x = find(from);
+    //         int y = find(to);
+    //         if (x != y) {
+    //             parent[x] = y;
+    //         }
+    //     }
 
-        public boolean connected(int x, int y) {
-            return find(x) == find(y);
-        }
-    }
+    //     public boolean connected(int x, int y) {
+    //         return find(x) == find(y);
+    //     }
+    // }
 }
