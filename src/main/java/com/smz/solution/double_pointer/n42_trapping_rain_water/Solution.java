@@ -4,6 +4,72 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class Solution {
+    
+    // [法一]：双指针，再次练习
+    public int trap3(int[] height) {
+        int n = height.length;
+        int left = 0, right = n - 1;
+        int leftMax = 0, rightMax = 0;
+
+        int ans = 0;
+        while(left < right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+
+            if (height[left] < height[right]) {
+                ans += leftMax - height[left];
+                left++;
+            } else {
+                ans += rightMax - height[right];
+                right--;
+            }
+        }
+
+        return ans;
+    }
+
+    // [法二]：单调栈，再次练习
+    public int trap4(int[] height) {
+        int n = height.length;
+        Deque<Integer> monoStack = new ArrayDeque<>();
+
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            int cur = height[i];
+            while(!monoStack.isEmpty() && height[monoStack.peek()] < cur) {
+                int topIdx = monoStack.poll();
+                if (!monoStack.isEmpty()) {
+                    ans += (Math.min(height[monoStack.peek()], cur) - height[topIdx]) * (i - monoStack.peek() - 1);
+                }
+            }
+            monoStack.push(i);
+        }
+
+        return ans;
+    }
+
+    // [法三]：DP，再次练习
+    public int trap5(int[] height) {
+        int n = height.length;
+        int[] leftMax = new int[n], rightMax = new int[n];
+
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = Math.max(leftMax[i-1], height[i-1]);
+        }
+
+        for (int i = n - 2; i >= 0; i--) {
+            rightMax[i] = Math.max(rightMax[i+1], height[i+1]);
+        }
+
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans += Math.max(0, Math.min(leftMax[i], rightMax[i]) - height[i]);
+        }
+
+        return ans;
+    }
+
+
     // [法三]：DP
     public int trap(int[] height) {
         int n = height.length;
@@ -78,7 +144,7 @@ public class Solution {
 
         Solution s = new Solution();
         for (int i = 0; i < testHeights.length; i++) {
-            System.out.println("No."+i+" test case:"+s.trap(testHeights[i]));
+            System.out.println("No."+i+" test case:"+s.trap4(testHeights[i]));
         }
     }
 }

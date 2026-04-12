@@ -3,6 +3,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Solution {
+    // [法一]：滑动窗口, 再次练习
+    public int lengthOfLongestSubstring1(String s) {
+        if (s.length() == 0) return 0;
+        int left = 0;
+        Set<Character> cSet = new HashSet<>();
+
+        int res = 1;
+        for (int right = 0; right < s.length(); right++) {
+            char cur = s.charAt(right);
+
+            while (cSet.contains(cur)) {
+                cSet.remove(s.charAt(left));
+                left++;
+            }
+
+            cSet.add(cur);
+            res = Math.max(res, right - left + 1);
+        }
+
+        return res;
+    }
+
     // [法一]：滑动窗口
     public int lengthOfLongestSubstring(String s) {
         int left = 0;

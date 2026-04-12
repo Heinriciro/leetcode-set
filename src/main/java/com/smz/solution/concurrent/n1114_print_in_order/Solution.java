@@ -1,4 +1,4 @@
-package com.smz.solution.concurrent;
+package main.java.com.smz.solution.concurrent.n1114_print_in_order;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
