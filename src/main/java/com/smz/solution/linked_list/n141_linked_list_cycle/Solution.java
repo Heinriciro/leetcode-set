@@ -1,4 +1,4 @@
-package com.smz.solution.n141_linked_list_cycle;
+package com.smz.solution.linked_list.n141_linked_list_cycle;
 
 import com.smz.utils.ListNode;
 

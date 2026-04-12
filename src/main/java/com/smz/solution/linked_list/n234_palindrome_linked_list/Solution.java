@@ -1,4 +1,4 @@
-package com.smz.solution.n234_palindrome_linked_list;
+package com.smz.solution.linked_list.n234_palindrome_linked_list;
 
 import com.smz.utils.ListNode;
 import java.util.ArrayList;
