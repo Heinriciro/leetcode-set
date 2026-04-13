@@ -1,11 +1,10 @@
 package com.smz.utils;
 
-public class ListNode {
-    public int val;
+public class ListNode extends Node{
     public ListNode next;
     public ListNode() {}
     public ListNode(int x) {
-        val = x;
+        this.val = x;
         next = null;
     }
     public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
@@ -14,8 +13,9 @@ public class ListNode {
     public static ListNode init(int[] elements) {
         ListNode dummy = new ListNode();
         ListNode pre = dummy;
+        ListNode cur;
         for (int e : elements) {
-            ListNode cur = new ListNode(e);
+            cur = new ListNode(e);
             pre.next = cur;
             pre = cur;
         }
@@ -31,6 +31,7 @@ public class ListNode {
         while (cur != null) {
             sb.append(cur.val);
             if (cur.next != null) sb.append(",");
+            cur = cur.next;
         }
         sb.append("]");
 
