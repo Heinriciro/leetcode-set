@@ -36,6 +36,8 @@ public class SimpleBinaryTree<T1> {
         public SimpleBinaryTreeNode<T2> left;
         public SimpleBinaryTreeNode<T2> right;
 
+        public SimpleBinaryTreeNode() {}
+
         public SimpleBinaryTreeNode(T2 x) {
             val = x;
         }

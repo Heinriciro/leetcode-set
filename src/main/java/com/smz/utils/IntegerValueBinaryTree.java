@@ -14,6 +14,8 @@ import java.lang.reflect.InvocationTargetException;
                 super(x);
             }
 
+            public TreeNode() {}
+
             public TreeNode(Integer x, TreeNode left, TreeNode right) {
                 super(x, left, right);
             }
