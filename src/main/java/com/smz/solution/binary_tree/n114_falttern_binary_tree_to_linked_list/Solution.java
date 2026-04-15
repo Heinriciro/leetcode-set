@@ -26,7 +26,7 @@ class Solution {
     }
 
     // [法二]：前序遍历 + 栈， 在遍历过程中直接连接
-    public void flatten1(TreeNode root) {
+    public void flatten2(TreeNode root) {
         if (root == null) return;
 
         Deque<TreeNode> que = new ArrayDeque<>();
